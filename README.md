@@ -157,10 +157,7 @@ Some TMB knowledge may be desirable - if you have a TMB model that you use then 
 
 We will need some R packages: 
 ```
-install.packages("dplyr",
-                        "kableExtra",
-                        "xtable",
-                        "devtools")
+install.packages("dplyr", "kableExtra", "xtable","devtools")
 ```
 
 and then to get csasdown:

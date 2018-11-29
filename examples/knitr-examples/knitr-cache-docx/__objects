@@ -1,0 +1,7 @@
+generate	n	x	y	.Random.seed
+notecho	z
+showdata	data
+plot	
+regression	fit
+plotfit	
+changey	

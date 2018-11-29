@@ -1,13 +1,12 @@
 ---
-# This part is YAML (Yet Another Markup Language). To run this file do:
-# rmarkdown::render("knitr-example-simpler.Rmd")
-# or click "Knit" in RStudio
-title: Simple knitr Rmarkdown example --- automatic write-up of simulated data
+title: "Simple knitr Rmarkdown example --- automatic write-up of simulated data"
 author: "Author name goes here"
-output: pdf_document
+header-includes: \usepackage{mathptmx}
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
 fontsize: 12pt
-header-includes:
-  - \usepackage{mathptmx}      # Times font
 ---
 
 <!-- This is a comment 
@@ -29,6 +28,7 @@ knitr::opts_chunk$set(
   echo = TRUE,
   autodep = TRUE,
   cache = TRUE,
+  # If a chunk needs to be updated each time (i.e. it depends on input that is outside the scope of this file and changes in that outside file would not be detected), set cache = FALSE in the chunk header
   # cache.comments = FALSE,
   dev = if (knitr:::is_latex_output()) "pdf" else "png",
   dpi = 200,
@@ -48,7 +48,8 @@ First generate the data in R:
 
 ```{r generate}
 set.seed(42)
-n <- 50 # sample size
+#n <- 50 # sample size
+n <- 30 # Ex1
 x <- 1:n
 y <- 10 * x + rnorm(n, 0, 10)
 # y = 10*x^1.5 + rnorm(n, 0, 10)
@@ -104,7 +105,8 @@ plot(x, y)
 
 Can fit and then print the summary regression output from R:
 
-```{r regression}
+```{r regression, echo=FALSE}
+# Added , echo-FALSE above to hide code
 fit <- lm(y ~ x)
 print(summary(fit))
 ``` 
