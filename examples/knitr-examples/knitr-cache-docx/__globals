@@ -1,7 +1,0 @@
-generate	set.seed	n	x	y	rnorm
-notecho	library	dplyr	xtable	z
-showdata	data	tbl_df	cbind	x	y
-plot	plot	x	y
-regression	fit	lm	y	x	print	summary
-plotfit	plot	x	y	abline	fit
-changey	y	x	rnorm	n
